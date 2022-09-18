@@ -1,8 +1,14 @@
 <h1>Clients</h1>
 
 <ul>
-  <li  *ngFor="let client of clients">
+  <li  *ngFor="let client of clients" (click)="clientClicked(client)">
     {{client.id}} - {{client.name}} {{client.surname}}
 
   </li>
 </ul>
+
+<!-- <p>{{selected_client.id}}</p>
+<p>{{selected_client.name}}</p>
+<p>{{selected_client.surname}}</p> -->
+
+<router-outlet></router-outlet>

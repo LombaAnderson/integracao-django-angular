@@ -15,4 +15,9 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'clients/',
     {headers: this.httpHeaders });
   };
+
+  getClient(id) : Observable<any>{
+    return this.http.get(this.baseUrl + 'clients/' + id + '/',
+    {headers: this.httpHeaders });
+  };
 }

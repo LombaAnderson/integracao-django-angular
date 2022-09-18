@@ -3,6 +3,7 @@ from .models import Client
 from .serializers import ClientSerializer, ClientSimpleSerializer
 from rest_framework.response import Response
 
+
 class ClientViewSet(viewsets.ModelViewSet):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
