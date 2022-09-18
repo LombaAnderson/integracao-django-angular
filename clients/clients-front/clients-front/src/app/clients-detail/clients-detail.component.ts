@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-clients-detail',
@@ -8,7 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ClientsDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private api:ApiService) { }
+  selected_client = {name: '', surname: ''};
 
   ngOnInit(): void {
     this.loadClient();
@@ -17,6 +19,16 @@ export class ClientsDetailComponent implements OnInit {
   loadClient(){
     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
+
+    this.api.getClient(id).subscribe(
+      data => {
+        console.log(data);
+        this.selected_client = data;
+      },
+     error =>{
+      console.log("Ocorreu um erro", error);
+     }
+    );
   }
 
 }
