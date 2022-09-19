@@ -6,6 +6,7 @@ cd my-dream-app
 ng serve
 ng generate service api
 ng generate component clients-detail( ou ng g c clients-detail)
+ng generate component new-client
 
 Django
 django-admin startproject myproject

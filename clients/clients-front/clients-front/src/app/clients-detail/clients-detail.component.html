@@ -3,3 +3,9 @@
 Cliente carregado: {{selected_client.name}} {{selected_client.surname}}
 
 <p>Selected id = {{selected_id}} </p>
+
+<input type="text" [(ngModel)]="selected_client.id" readonly>
+<input type="text" [(ngModel)]="selected_client.name">
+<input type="text" [(ngModel)]="selected_client.surname">
+<input type="text" [(ngModel)]="selected_client.phone">
+<button (click)="update()">Update Client</button>

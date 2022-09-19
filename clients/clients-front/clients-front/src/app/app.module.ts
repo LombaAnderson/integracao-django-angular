@@ -5,16 +5,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientsDetailComponent } from './clients-detail/clients-detail.component';
+import { FormsModule } from '@angular/forms';
+import { NewClientComponent } from './new-client/new-client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientsDetailComponent
+    ClientsDetailComponent,
+    NewClientComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
