@@ -1,13 +1,24 @@
 <h1>Clientes</h1>
 
-<ul>
-  <li  *ngFor="let client of clients" (click)="clientClicked(client)">
-    {{client.id}} - {{client.name}} {{client.surname}}
+<table class="alt">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients" (click)="clientClicked(client)">
+      <td>{{client.id}}</td>
+      <td>{{client.name}} {{client.surname}}</td>
+      <!-- <td>{{client.phone}}</td> -->
+    </tr>
+  </tbody>
+</table>
 
-  </li>
-</ul>
 
-<!-- <p>{{selected_client.id}}</p>
+<!--<p>{{selected_client.id}}</p>
 <p>{{selected_client.name}}</p>
 <p>{{selected_client.surname}}</p> -->
 

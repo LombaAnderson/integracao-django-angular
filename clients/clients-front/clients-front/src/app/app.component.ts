@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class AppComponent {
 title = 'clients-front';
 
-selected_client = {id:0, name:'', surname:''};
+selected_client = {id:0, name:'', surname:'', phone:''};
 
 clients = [
   {name: 'Client 01', id: 6, surname: "Lomba", photo: 'http://www.minhaapp.com/photo1'},

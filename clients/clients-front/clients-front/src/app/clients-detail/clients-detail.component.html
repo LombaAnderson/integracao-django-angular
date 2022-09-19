@@ -1,16 +1,15 @@
-<h1>Informação dos Clientes</h1>
+<h2>Informações</h2>
 
-Cliente carregado: {{selected_client.name}} {{selected_client.surname}}
+<span>Você está editando</span> : {{selected_client.name}} {{selected_client.surname}}
 
-<p>Id Selecionado = {{selected_id}} </p>
 
-<input type="text" [(ngModel)] = "selected_client.id" readonly>
-<input type="text" [(ngModel)] = "selected_client.name">
-<input type="text" [(ngModel)] = "selected_client.surname">
-<input type="text" [(ngModel)] = "selected_client.phone">
+<input type="text" [(ngModel)] = "selected_client.id" readonly> <br>
+<input type="text" [(ngModel)] = "selected_client.name"> <br>
+<input type="text" [(ngModel)] = "selected_client.surname"> <br>
+<!-- <input type="text" [(ngModel)] = "selected_client.phone"> <br> -->
 
-<button (click)="update()">Atualizar Cliente</button>
+<button (click)="update()" class="button">Atualizar Cliente</button>
 
-<button (click)="delete()">Deletar Cliente</button>
+<button (click)="delete()" class="button">Deletar Cliente</button>
 
-<button (click)="newClient()">Novo</button>
+<button (click)="newClient()" class="button primary">Novo</button>

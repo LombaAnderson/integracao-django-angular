@@ -1,7 +1,10 @@
 <h1>Novo cliente</h1>
 
-<input type="text" [(ngModel)]="client.name">
-<input type="text" [(ngModel)]="client.surname">
-<input type="text" [(ngModel)]="client.phone">
+<label for="">Nome</label>
+<input type="text" [(ngModel)]="client.name"> <br>
+<label for="">Sobrenome</label>
+<input type="text" [(ngModel)]="client.surname"> <br>
+<label for="">Telefone</label>
+<input type="text" [(ngModel)]="client.phone"> <br>
 
 <button (click)="save()">Salvar Cliente</button>

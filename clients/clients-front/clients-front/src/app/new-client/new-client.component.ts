@@ -8,7 +8,7 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./new-client.component.css']
 })
 export class NewClientComponent implements OnInit {
-  client = { name: '', surname: '', phone: ''};
+  client = { name: '', surname: '', phone:''};
 
   constructor(
     private api: ApiService,

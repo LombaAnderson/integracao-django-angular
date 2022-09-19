@@ -14,7 +14,7 @@ export class ClientsDetailComponent implements OnInit {
     private api:ApiService,
     private router: Router,
     private appComponente: AppComponent) { }
-    selected_client = {id: '', name: '', surname: '', phone: ''};
+    selected_client = {id: '', name: '', surname: ''};
     selected_id;
 
   ngOnInit(){
