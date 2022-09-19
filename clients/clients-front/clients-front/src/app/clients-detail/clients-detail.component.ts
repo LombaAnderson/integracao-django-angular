@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -12,8 +13,11 @@ export class ClientsDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private api:ApiService,
-    private router: Router) { }
-  selected_client = {id: '', name: '', surname: '', phone: ''};
+    private router: Router,
+    private appComponente: AppComponent) { }
+
+
+    selected_client = {id: '', name: '', surname: '', phone: ''};
   selected_id;
 
   ngOnInit(){
@@ -42,6 +46,23 @@ export class ClientsDetailComponent implements OnInit {
       this.selected_client = data;
     },
    error =>{
+    console.log("Ocorreu um erro", error.message);
+   }
+  );
+ };
+
+ delete(){
+  this.api.deleteClient(this.selected_id).subscribe(
+    data => {
+      let index;
+        this.appComponente.clients.forEach((e,i) =>{
+          if(e.id == this.selected_id)
+          index = i;
+        });
+
+        this.appComponente.clients.splice(index, 1);
+    },
+      error =>{
     console.log("Ocorreu um erro", error.message);
    }
   );

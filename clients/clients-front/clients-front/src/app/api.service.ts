@@ -33,4 +33,9 @@ export class ApiService {
 
   };
 
+  deleteClient(id): Observable<any>{
+    return this.http.delete(this.baseUrl + 'clients/' + id + '/',
+    {headers: this.httpHeaders });
+  };
+
 }
