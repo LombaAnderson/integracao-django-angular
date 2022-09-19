@@ -35,9 +35,7 @@ getClients = () => {
   clientClicked =(client) =>{
     this.router.navigate(['client-detail', client.id]);
   };
-
-  
-  }
+}
 
 
 

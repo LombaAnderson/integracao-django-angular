@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 
@@ -10,7 +10,9 @@ import { ApiService } from '../api.service';
 })
 export class ClientsDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private api:ApiService) { }
+  constructor(private route: ActivatedRoute,
+    private api:ApiService,
+    private router: Router) { }
   selected_client = {id: '', name: '', surname: '', phone: ''};
   selected_id;
 
@@ -43,8 +45,11 @@ export class ClientsDetailComponent implements OnInit {
     console.log("Ocorreu um erro", error.message);
    }
   );
+ };
 
-    }
+ newClient(){
+  this.router.navigate(['new-client']);
+ }
 
  }
 

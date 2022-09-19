@@ -27,4 +27,10 @@ export class ApiService {
     {headers: this.httpHeaders });
   };
 
+  saveNewClient(client): Observable<any>{
+    return this.http.post(this.baseUrl + 'clients/', client,
+    {headers: this.httpHeaders });
+
+  };
+
 }
