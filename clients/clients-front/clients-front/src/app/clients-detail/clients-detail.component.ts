@@ -35,10 +35,20 @@ export class ClientsDetailComponent implements OnInit {
  };
 
  update(){
+  this.api.updateClient(this.selected_client).subscribe(
+    data => {
+      this.selected_client = data;
+    },
+   error =>{
+    console.log("Ocorreu um erro", error.message);
+   }
+  );
+
+    }
 
  }
 
-}
+
 
 
 
