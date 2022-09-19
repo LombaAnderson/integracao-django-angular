@@ -3,7 +3,6 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { AppComponent } from '../app.component';
 
-
 @Component({
   selector: 'app-clients-detail',
   templateUrl: './clients-detail.component.html',
@@ -15,20 +14,16 @@ export class ClientsDetailComponent implements OnInit {
     private api:ApiService,
     private router: Router,
     private appComponente: AppComponent) { }
-
-
     selected_client = {id: '', name: '', surname: '', phone: ''};
-  selected_id;
+    selected_id;
 
   ngOnInit(){
     this.route.paramMap.subscribe((param:ParamMap) => {
      let id = parseInt(param.get('id') );
      this.selected_id = id;
      this.loadClient(id);
-
     });
   }
-
   loadClient(id){
     this.api.getClient(id).subscribe(
       data => {
@@ -39,7 +34,6 @@ export class ClientsDetailComponent implements OnInit {
      }
     );
  };
-
  update(){
   this.api.updateClient(this.selected_client).subscribe(
     data => {
@@ -50,7 +44,6 @@ export class ClientsDetailComponent implements OnInit {
    }
   );
  };
-
  delete(){
   this.api.deleteClient(this.selected_id).subscribe(
     data => {

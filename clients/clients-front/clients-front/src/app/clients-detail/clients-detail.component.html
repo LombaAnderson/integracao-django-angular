@@ -1,16 +1,16 @@
-<h1>Client Detail Component</h1>
+<h1>Informação dos Clientes</h1>
 
 Cliente carregado: {{selected_client.name}} {{selected_client.surname}}
 
-<p>Selected id = {{selected_id}} </p>
+<p>Id Selecionado = {{selected_id}} </p>
 
 <input type="text" [(ngModel)] = "selected_client.id" readonly>
 <input type="text" [(ngModel)] = "selected_client.name">
 <input type="text" [(ngModel)] = "selected_client.surname">
 <input type="text" [(ngModel)] = "selected_client.phone">
 
-<button (click)="update()">Update Client</button>
+<button (click)="update()">Atualizar Cliente</button>
 
-<button (click)="delete()">Delete Client</button>
+<button (click)="delete()">Deletar Cliente</button>
 
-<button (click)="newClient()">New</button>
+<button (click)="newClient()">Novo</button>
